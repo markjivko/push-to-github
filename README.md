@@ -10,12 +10,12 @@ You need to provide the target repository's private key as a secret.
 
 - Create an SSH key-pair on your machine
 - Add the **public key** to your target repository
-- Add the **private key** to your source repository as a **secret** (for example `GITHUB_TARGET_SSH_KEY`)
+- Add the **private key** to your source repository as a **secret** (for example `GITHUB_PRIVATE_SSH_KEY`)
 
 ```yaml
 uses: markjivko/push-to-github@main
 env:
-  GITHUB_SSH_KEY: ${{ secrets.GITHUB_TARGET_SSH_KEY }}
+  GITHUB_SSH_KEY: ${{ secrets.GITHUB_PRIVATE_SSH_KEY }}
 with:
   source-directory: "out"
   target-directory: "src"
