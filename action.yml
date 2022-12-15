@@ -35,7 +35,7 @@ inputs:
     default: "${{ github.job }} from ${{ github.repository }}"
     required: false
   github-server:
-    description: "GitHub Server"
+    description: "Git Server"
     default: "github.com"
     required: false
 runs:
