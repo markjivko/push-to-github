@@ -1,4 +1,4 @@
-name: Push to Repository
+name: Push to GitHub
 description: >-
   Push entire directory to another GitHub repository
 branding:
