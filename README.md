@@ -1,2 +1,3 @@
-# push-to-github
-GitHub Action: push folder output to GitHub repo
+# Push-to-repo
+
+GitHub action to push directory to another GitHub repository

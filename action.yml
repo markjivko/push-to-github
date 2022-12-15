@@ -1,0 +1,53 @@
+name: Push directory to repository
+description: >-
+  Push entire directory to another GitHub repository
+branding:
+  icon: git-commit
+  color: green
+inputs:
+  source-directory:
+    description: Source directory from the origin directory
+    required: true
+  target-github-username:
+    description: "Target repository username"
+    required: true
+  target-github-repository:
+    description: "Target repository name"
+    required: true
+  target-github-branch:
+    description: "Target repository branch name; defaults to 'main'"
+    default: main
+    required: false
+  target-directory:
+    description: "Target repository directory"
+    default: ""
+    required: false
+  commit-email:
+    description: "Author email"
+    default: ${{ github.actor }}
+    required: false
+  commit-name:
+    description: "Author name; defaults to $target-github-username"
+    required: false
+    default: ""
+  commit-message:
+    description: "Commit message; defaults to ORIGIN_COMMIT"
+    default: "${{ github.job }} from ${{ github.repository }}"
+    required: false
+  github-server:
+    description: "GitHub Server"
+    default: "github.com"
+    required: false
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - "${{ inputs.source-directory }}"
+    - "${{ inputs.target-github-username }}"
+    - "${{ inputs.target-github-repository }}"
+    - "${{ inputs.target-github-branch }}"
+    - "${{ inputs.target-directory }}"
+    - "${{ inputs.commit-email }}"
+    - "${{ inputs.commit-name }}"
+    - "${{ inputs.commit-message }}"
+    - "${{ inputs.github-server }}"
