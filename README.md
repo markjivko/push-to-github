@@ -21,4 +21,6 @@ with:
   target-github-username: "my-user"
   target-github-repository: "my-repo"
   target-github-branch: "main"
+  commit-email: "111111111+user@users.noreply.github.com"
+  commit-name: "John Doe"
 ```
