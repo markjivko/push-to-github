@@ -32,7 +32,7 @@ inputs:
     default: ""
   commit-message:
     description: "Commit message; defaults to ORIGIN_COMMIT"
-    default: "${{ github.job }} from ${{ github.repository }}"
+    default: "${{ github.repository }}/commit/${{ github.sha }}: ${{ github.job }}"
     required: false
   github-server:
     description: "Git Server"
