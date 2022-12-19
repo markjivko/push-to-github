@@ -98,10 +98,6 @@ cd "$CLONE_DIR"
 echo "[+] Listing Current Directory"
 ls -la
 
-ORIGIN_COMMIT="https://$INPUT_GITHUB_SERVER/$GITHUB_REPOSITORY/commit/$GITHUB_SHA"
-INPUT_COMMIT_MESSAGE="${INPUT_COMMIT_MESSAGE/ORIGIN_COMMIT/$ORIGIN_COMMIT}"
-INPUT_COMMIT_MESSAGE="${INPUT_COMMIT_MESSAGE/\$GITHUB_REF/$GITHUB_REF}"
-
 echo "[+] Set directory is safe ($CLONE_DIR)"
 git config --global --add safe.directory "$CLONE_DIR"
 
